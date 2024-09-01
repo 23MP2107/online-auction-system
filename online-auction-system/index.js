@@ -5,6 +5,8 @@ const app =express()
 const cookieParser = require('cookie-parser')
 const multer = require('multer'); // Add Multer for file uploads
 const path = require('path');
+const mongoose = require('mongoose');
+const sellRoutes = require('./routes/sell'); // Path to your sell routes
 
 app.set('view engine','ejs')
 app.use(cookieParser())
@@ -40,10 +42,26 @@ const upload = multer({
     fileFilter: fileFilter
 });
 
+// Route to handle form submission and file upload
+app.post('/upload', upload.single('productImage'), (req, res) => {
+    if (!req.file) {
+        return res.status(400).send('No file uploaded.');
+    }
+
+    // Access uploaded file with req.file
+    console.log('Uploaded file:', req.file);
+
+    // Handle saving of other form data as needed
+    // Save the product details and image path to the database
+
+    res.send('Product listed successfully!');
+});
+
 let userRoute = require('./routes/user')
 let adminRoute = require('./routes/admin')
 app.use('/',userRoute)
 app.use('/admin',adminRoute)
+
 
 let port = process.env.PORT || 3000
 
