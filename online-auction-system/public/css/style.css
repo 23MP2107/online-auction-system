@@ -1,0 +1,1742 @@
+html{
+	width: 100%;
+	overflow-x: hidden;
+}
+body {
+	width: 100%;
+	overflow-x: hidden;
+	background-color: #ffffff;
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-item {
+	
+	padding: 15px 16px;
+	font-size: 19px;
+
+  }
+
+.nav-title{
+	padding: 20px;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+}
+
+@media (max-width: 768px) {
+	.navbar-nav {
+	  padding-top: 20px;
+	}
+	.nav-item {
+	  font-size: 20px;
+	  padding: 10px 0;
+	}
+	.nav-title{
+		padding: 10px;
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 15px;
+	}
+  }
+
+/*home-page*/
+
+.head-row{
+	padding-top: 90px;
+}
+
+.head-1{
+	padding: 35px;
+	position: absolute;
+	top: 80px;
+	font-weight: 500px ;
+	font-size: 65px;
+	line-height: 79px;
+}
+
+.des-1{
+	padding: 45px;
+	position: absolute;
+	top: 200px;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 26px;
+	line-height: 24px;
+}
+
+.button{
+	background-color: transparent;
+	border: 1px solid #000000;
+	color: rgb(0, 0, 0);
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 400;
+	margin: 40px 2px;
+	cursor: pointer;
+}
+
+.button:hover {
+    color:#ffffff; 
+	background-color: black;
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+	color: white;
+    text-decoration: none;
+	cursor: pointer;
+
+}
+
+.Feature-item-head{
+	padding: 75px;
+	position: absolute;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 49px;
+}
+
+.fea-text-des{
+	padding: 0;
+	position: absolute;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 20px;
+}
+
+.feature-item-carousal{
+	max-width: 1300px;
+	margin-left: 100px;
+	margin-top: 220px;
+}
+
+.feature-auc-carousal{
+	max-width: 1300px;
+	margin-left: 100px;
+	margin-top: 220px;
+}
+
+@media (max-width: 676px) {
+	.head-row{
+		padding-top: 0px;
+	}
+	.main-img{
+		margin-top: 390px;
+	}
+	.head-1{
+		text-align: center;
+		position: absolute;
+		padding-top: 20px;
+		font-weight: 500px ;
+		font-size: 35px;
+		line-height: 39px;
+	}
+	.des-1{
+		text-align: center;
+		position: absolute;
+		padding-top: 6px;
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 24px;
+	}
+	.button{
+		background-color: transparent;
+		border: 1px solid #000000;
+		color: rgb(0, 0, 0);
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		font-weight: 400;
+		margin: 40px 2px;
+		cursor: pointer;
+		border: 1px solid #000000;
+	}
+	.Feature-item-head{
+		position: absolute;
+		text-align: center;
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 28px;
+		line-height: 15px;
+	}
+	.arrow{
+		display: none;
+	}
+	.fea-text-des{
+		position: relative;
+		text-align: center;
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 20px;
+		text-decoration: underline;
+	}
+	.feature-item-carousal{
+		max-width: 300px;
+		margin-left: 35px;
+		margin-top: 150px;
+	}
+	.feature-auc-carousal{
+		max-width: 300px;
+		margin-left: 35px;
+		margin-top: 180px;
+	}
+	
+}
+
+.card{
+	background: #F2E6DC;
+	box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+	border: 0;
+	border-radius: 1rem
+}
+
+.card-img, .card-img-top{
+	border-top-left-radius: calc(1rem - 1px);
+	border-top-right-radius: calc(1rem - 1px)
+}
+
+.card h5{
+	overflow: hidden;
+	height: 56px;
+	font-weight: 500;
+	font-size: 1rem
+}
+
+.card-img-top{
+	width: 100%;
+	max-height: 350px;
+	object-fit: contain;
+	padding: 0px;
+}
+
+.card h2{
+	font-size: 1rem
+}
+
+.card-title{
+	font-size: 15px;
+}
+
+.label-top-1{
+	position: absolute;
+	background-color: #aad74f;
+	color: #fff;
+	top: 8px;
+	right: 8px;
+	padding: 5px 10px 5px 10px;
+	font-size: .7rem;
+	font-weight: 600;
+	border-radius: 3px;
+	text-transform: uppercase
+}
+
+.label-top-2{
+	position: absolute;
+	background-color: #e81212;
+	color: #fff;
+	top: 8px;
+	right: 8px;
+	padding: 5px 10px 5px 10px;
+	font-size: .7rem;
+	font-weight: 600;
+	border-radius: 3px;
+	text-transform: uppercase
+}
+
+.bid-now-btn {
+	font-size: 1.5rem;
+	background-color: #000000;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+  }
+
+
+.btn{
+	font-size: 1rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	padding: 5px 50px 5px 50px
+}
+
+.btn-warning{
+	background: none #000000;
+	color: #ffffff;fill: #ffffff;
+	border: none;
+	text-decoration: none;
+	outline: 0;
+	box-shadow: -1px 6px 19px rgb(255, 255, 255);
+	border-radius: 100px
+}
+
+.btn-warning:hover{
+	background: none #ffffff;
+	color: #000000;
+	box-shadow: -1px 6px 13px rgba(66, 66, 66, 0.35)
+}
+
+.bg-success{
+	font-size: 1rem;
+	background-color: #f7810a !important
+}
+			
+.feature-auc-head{
+	padding: 75px;
+	position: absolute;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 49px;
+}
+
+@media (max-width: 768px) {
+	.col{
+		padding: 10px;
+		padding-top: 35px;	
+		position: relative;
+		margin-left: 2px;
+	}
+	.feature-auc-head{
+		position: absolute;
+		text-align: center;
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 23px;
+		line-height: 25px;
+	}
+	.card-title{
+		font-size: 10px;
+		line-height: 15px;
+	}
+	.bid-now-btn {
+		font-size: 1.2rem;
+		background-color: #000000;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	  }
+}
+
+/* News Letter */
+
+.Newsletter{
+	margin-left: 95px;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 45px;
+	line-height: 55px;
+}
+
+.Newsletter-des{
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 30px;
+}
+
+.check-box{
+	font-size: 22px; 
+	margin-top: 50px; 
+	margin-left: 95px;
+}
+
+.br {
+	display: block;
+	margin-bottom: 20px;
+}
+
+.input-group{
+	width: 700px;
+}
+
+.form-control{
+	margin-left: 0px; 
+	margin-top: 20px;
+	width: 2rem;
+	background: #FFFFFF;
+	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 5px 5px 5px 5px;
+}
+.form-control-lg{
+	margin-left: 95px;
+}
+.btn-1{
+	padding: 10px 10px 10px 10px;
+	margin-top: 20px;
+	width: 150px;
+	height: 48px; 
+	background:  #000000;
+	color: #ffffff;
+	border: none;
+	text-decoration: none;
+	outline: 0;
+	box-shadow: -1px 6px 19px rgba(93, 93, 93, 0.25);
+	border-radius: 0px 5px 5px 0px;
+} 
+
+.btn-1:hover{
+	background-color: #ffffff;
+	color: #000000;
+}
+
+@media (max-width: 768px) {
+	.Newsletter{
+		margin-left: 0;
+		text-align: center;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 30px;
+		line-height: 55px;
+	}
+
+	.Newsletter-des{
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 18px;
+	}
+	.check-box{
+		font-size: 18px; 
+		margin-top: 30px; 
+		margin-left: 0px;
+	}
+	.br {
+		display: block;
+		margin-bottom: 20px;
+	}
+	
+	.input-group{
+		width: 320px;
+	}
+	
+	.form-control{ 
+		margin-top: 20px;
+		margin-left: 0;
+		font-size: 10px;
+		width: 100px;
+		background: #FFFFFF;
+		box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border-radius: 5px 5px 5px 5px;
+	}
+	.btn-1{
+		padding: 10px 10px 10px 10px;
+		margin-top: 20px;
+		width: 70px;
+		height: 32px; 
+		font-size: 10px;
+		background:  #000000;
+		color: #ffffff;
+		border: none;
+		text-decoration: none;
+		outline: 0;
+		box-shadow: -1px 6px 19px rgba(93, 93, 93, 0.25);
+		border-radius: 0px 5px 5px 0px;
+	} 
+	.btn-1:hover{
+		background-color: #ffffff;
+		color: #000000;
+	}
+}
+
+/* Footer */
+
+footer{
+	background: #212529;
+	padding: 20px 0;
+	color: #fff
+}
+
+.con-foot-privacy{
+	position: relative;
+	top: 25px;
+	left: 25px;
+	color: #FFFFFF;
+}
+
+.con-foot-terms{
+	padding-right: 25px;
+	position: relative;
+	text-align: right;
+	display: flex;
+	justify-content: right;
+	color: #FFFFFF;
+}
+
+.footer-copyright{
+	text-align: center;
+	margin-top:50px;
+}
+
+@media (max-width: 768px) {
+	footer{
+		background: #212529;
+		height: 140px;
+		color: #fff
+	}
+	.con-foot-privacy{
+		left: 0px;
+		display: flex;
+		justify-content: center;
+		color: #FFFFFF;
+	}
+	.con-foot-terms{
+		top: 25px;
+		padding-right: 0px;
+		display: flex;
+		justify-content:center;
+		color: #FFFFFF;
+	}
+	.footer-copyright{
+		text-align: center;
+		margin-top:50px;
+	}
+}
+
+/* Auction Page */
+
+.auc-text-1{
+	margin-left: 100px; 
+	margin-top: 105px;
+	margin-bottom: 2px; 
+	font-size: 35px; 
+	font-weight: 500; 
+}
+.auc-text-2{
+	margin-left: 100px; 
+	font-size: 24px; 
+	font-weight: 400;
+}
+.con{
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.con-txt1{
+	margin-left: 100px;
+	margin-top: 25px; 
+	margin-bottom: 1px; 
+	font-size: 35px; 
+	font-weight: 500;
+}
+.con-txt2{
+	margin-left: 100px;
+	margin-top: 0; 
+	font-size: 20px; 
+	font-weight: 400;
+}
+.upcm-text-1{
+	margin-left: 100px;
+	margin-top: 5px;
+	margin-bottom: 1px; 
+	font-size: 35px; 
+	font-weight: 500;
+}
+.upcm-text-2{
+	margin-left: 100px;  
+	font-size: 24px; 
+	font-weight: 400;
+}
+
+@media (max-width: 768px) {
+	.auc-text-1{
+		text-align: center;
+		margin-left: 0px;
+		margin-top: 100px;  
+		font-size: 25px; 
+		font-weight: 500;
+	}
+	.auc-text-2{
+		text-align: center;
+		margin-left: 0px;
+		margin-top: 5px; 
+		font-size: 18px; 
+		font-weight: 500;
+	}
+	.con-txt1{
+		text-align: center;
+		margin-left: 0px;
+		margin-top: 25px; 
+		margin-bottom: 1px; 
+		font-size: 25px; 
+		font-weight: 500;
+	}
+	.con-txt2{
+		text-align: center;
+		margin-left: 0px;
+		margin-top: 0; 
+		font-size: 15px; 
+		font-weight: 400;
+	}
+	.upcm-text-1{
+		text-align: center;
+		margin-left: 0px;
+		margin-top: 20px; 
+		font-size: 25px; 
+		font-weight: 500;
+	}
+	.upcm-text-2{
+		text-align: center;
+		margin-left: 0px;
+		margin-top: 0; 
+		font-size: 15px; 
+		font-weight: 400;
+	}
+}
+
+/* login-page/Sign-up-page */
+
+.login-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 100%;
+    background: url(Images/login-page/Illustration.svg)no-repeat ;
+	background-color: #2f2f2f;
+    background-position: right;
+    background-size: 500px 500px;   
+}
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px  );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    font-size: 2em;
+    color: #ffffff;
+    text-align: center;
+}
+
+.inputbox{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #ffffff;
+}
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label{
+    top: -5px;
+}
+.inputbox input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding:0 35px 0 5px;
+    color: #fff;
+}
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+.forget{
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: #fff;
+}
+.forget label input{
+    margin-right: 3px;
+
+}
+.forget label a{
+    color: #fff;
+    text-decoration: none;
+
+}
+.forget label a:hover{
+    text-decoration: underline;
+
+}
+.btn-login{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+	color: #000000;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+}
+.register{
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.register p a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+.register P a:hover{
+    text-decoration: underline;
+
+}
+.form-sign-up{
+	padding: 50px;
+	background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px  );
+}
+
+@media (max-width: 768px) {
+	.login-section{
+		padding: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 80vh;
+		width: 100%;
+		background: url(Images/login-page/Illustration.svg)no-repeat ;
+		background-color: #2f2f2f;
+		background-position: right;
+		background-size: 400px 300px;   
+	}
+	.form-sign-up{
+		padding: 12px;
+		background: transparent;
+		border: 2px solid rgba(255,255,255,0.5);
+		border-radius: 20px;
+		backdrop-filter: blur(15px  );
+	}
+	
+	}
+
+/*Bidding-page*/
+
+.horizontal-list {
+	display: flex;
+	justify-content: right; /* or other value such as space-between, space-around, etc. */
+	list-style: none; /* remove default bullet points */
+	padding: 0; /* remove default padding */
+  }
+  
+  .horizontal-list li {
+	margin: 0 20px; /* add some space between list items */
+  }
+  
+
+.card-img-top-biding{
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+.bid-item-title{
+	font-size: 18px;
+	font-weight: 500;
+}
+.bid-item-des{
+	padding-bottom: 5px;
+	font-size: 15px;
+	font-weight: 400;
+	text-align: justify;
+}
+.bid-details{
+	font-size: 18px;
+	font-weight: 500;
+}
+
+/*bid-Timer*/
+.auction-container {
+	padding-top: 15px ;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+ } 
+.timer {
+	font-size: 20px;
+  }
+  
+  .bid-now {
+	font-size: 1.5rem;
+	background-color: #000000;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+  }
+  
+  .bid-now-btn:disabled {
+	background-color: #000000;
+	color: #aaa;
+	cursor: not-allowed;
+  }
+  
+
+/*Selling-page*/
+/*Form Style*/
+.selling-form {
+	max-width: 1050px;
+	margin: 0 auto;
+	background-color: #F2E6DC;
+	border-radius: 10px;
+	padding: 50px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+.selling-form h1 {
+	font-size: 50px;
+	text-align: center;
+	margin-bottom: 30px;
+	font-weight: 500;
+	color: #333;
+	text-transform: uppercase;
+  }
+  
+  .form-row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 20px;
+  }
+  
+  .form-group {
+	flex-basis: 48%;
+  }
+  
+  .form-group:last-child {
+	flex-basis: 100%;
+  }
+  
+  .form-group label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: 600;
+	color: #333;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+	width: 100%;
+	padding: 15px;
+	border: none;
+	border-radius: 10px;
+	font-size: 1.1rem;
+	background-color: #f5f5f5;
+	color: #333;
+	margin-bottom: 20px;
+  }
+  
+  .form-group textarea {
+	resize: none;
+	height: 120px;
+	padding-top: 15px;
+  }
+  
+  .image-upload input[type="file"] {
+	display: none;
+  }
+  
+  .image-upload label {
+	display: block;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 15px;
+	border-radius: 10px;
+	font-weight: 600;
+	margin-top: 20px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  .image-upload label:hover {
+	background-color: #444;
+  }
+  
+  .image-upload img {
+	max-width: 100%;
+	max-height: 400px;
+	margin-top: 20px;
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group button {
+	margin-left: 4	00px;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	font-size: 1.1rem;
+	padding: 15px 30px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  .form-group button:hover {
+	background-color: #fff;
+	color: #000000;
+	font-weight: 500;
+  }
+  @media only screen and (max-width: 768px) {
+	.form-row {
+	  flex-direction: column;
+	}
+  
+	.form-group {
+	  flex-basis: 100%;
+	}
+  }
+
+
+/*Contact-Us page*/
+.contact-section{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 30px;
+  }
+ 
+.contact-section h2 {
+	color: #000000;
+	font-size: 28px;
+	font-weight: normal;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+  }
+  
+  .contact-info, .contact-form {
+	flex-basis: calc(50% - 15px);
+	margin-bottom: 30px;
+  }
+  
+  .contact-section .contact-info {
+	margin-right: 30px;
+  }
+  
+ .contact-section ul {
+	list-style: none;
+	padding: 0;
+  }
+  
+  .contact-section li {
+	font-size: 18px;
+	margin-bottom: 10px;
+  }
+  
+  .contact-form {
+	background-color: #F2E6DC;
+	border: 1px solid #ddd;
+	border-radius: 12px;
+	padding: 20px;
+  }
+  
+  .contact-form label {
+	display: block;
+	font-size: 18px;
+	margin-bottom: 5px;
+  }
+  
+  .contact-form  input[type="text"],
+  .contact-form  input[type="email"],
+  .contact-form  textarea {
+	background-color: #f9f9f9;
+	border: none;
+	border-radius: 4px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	margin-bottom: 10px;
+	padding: 10px;
+	width: 100%;
+  }
+  
+  .contact-form textarea {
+	height: 150px;
+  }
+  
+  button[type="submit"] {
+	background-color: #000000;
+	border: none;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 18px;
+	padding: 10px 20px;
+	transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+	background-color: #ffffff;
+	color: #000000;
+  }
+
+
+
+/* Admin-Page-Styles */
+
+.sidebar {
+	overflow-y: hidden;
+	height: 100%;
+	width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    overflow-x: hidden;
+    padding-top: 105px;
+	/*height: 130vh;*/
+  	color: #fff;
+}
+
+/* Style the links inside the sidebar */
+.sidebar a {
+	padding: 12px 8px 12px 25px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #ffffff;
+	display: block;
+  }
+
+/* Change the color of links on hover */
+  .sidebar a:hover {
+	background-color: #555;
+	color: #f6b683;
+  }
+
+/* Main content */
+.main {
+	margin-left: 200px; /* Same as the width of the sidebar */
+	padding: 0px 10px;
+	margin-left: 270px;
+	margin-top: 120px;
+  }
+
+ /* Responsive layout - makes the menu and the main content stack on top of each other */
+ @media (max-width: 768px) {
+	.sidebar {
+	  width: 100%;
+	  height: auto;
+	  position: relative;
+	}
+	.sidebar a {float: left;}
+	div.content {margin-left: 0;}
+  }
+
+/* Admin-Page-Styles */
+/* Admin-Dashboard styles */
+
+.Admin-Dashboard .main-content {
+	flex-grow: 1;
+	padding: 20px;
+  }
+  
+  .Admin-Dashboard .cards-container {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+  }
+  
+  .Admin-Dashboard .card-chart {
+	flex-basis: calc(33.33% - 10px);
+	background-color: #facca4;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	border-radius: 4px;
+  }
+  
+  .Admin-Dashboard .card-chart h2 {
+	color: #000000;
+	font-size: 18px;
+	font-weight: 00;
+	margin-top: 0;
+  }
+  
+  .Admin-Dashboard .card-chart-text {
+	font-size: 36px;
+	font-weight: bold;
+  }
+  
+  .Admin-Dashboard .table-container {
+	background-color: #fff;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	border-radius: 4px;
+  }
+  
+  .Admin-Dashboard table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+  }
+
+  .Admin-Dashboard .act-admin a{
+	font-weight: 500;
+  }
+
+  .Admin-Dashboard a:hover {
+	color: rgb(105, 11, 255);
+	font-weight: bold;
+  }
+  
+  .Admin-Dashboard th, td {
+	padding: 10px;
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+  }
+  
+  .Admin-Dashboard th {
+	background-color: #f7f7f7;
+	font-weight: normal;
+  }
+  
+  .Admin-Dashboard tr:last-child td {
+	border-bottom: none;
+  }
+
+/* Admin-Auction-styles */
+
+.auction-manage {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0px;
+}
+
+
+.auction-manage section {
+	margin-bottom: 2rem;
+}
+
+.auction-manage section h2 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+.auction-manage .auction-actions .action-auc{
+	background-color: #f5b077;
+	border: none;
+	border-radius: 2px;
+	color: #fff;
+}
+
+.auction-manage .auction-list,
+.auction-manage .user-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-gap: 1rem;
+}
+
+
+.auction-manage .auction,
+.auction-manage .user {
+	background-color: #f5f5f5;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 5px;
+}
+
+.auction-manage .auction-actions,
+.user-actions {
+	display: flex;
+}
+
+.auction-manage .auction-actions button:not(:last-child),
+.user-actions button:not(:last-child) {
+	margin-right: 0.5rem;
+}
+
+.auction-manage .btn-add-Auction,
+.auction-manage .add-user {
+	background-color: #f5b077;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.btn-add-Auction:hover, 
+.add-user:hover {
+	background-color:#fbdda9;
+}
+
+
+
+/* Admin-Products styles */
+
+.products-manage .button-container {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 20px;
+}
+
+.products-manage .button {
+	margin-left: 10px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	background-color: #f5b077;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+.products-manage .button:hover {
+	background-color: #fbdda9;
+	color: white;
+}
+
+.products-manage table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.products-manage table th,
+.products-manage table td {
+	padding: 10px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+.products-manage table th:first-child,
+.products-manage table td:first-child {
+	width: 1%;
+	white-space: nowrap;
+}
+
+.products-manage table th:last-child,
+.products-manage table td:last-child {
+	width: 1%;
+	white-space: nowrap;
+	text-align: center;
+}
+
+.products-manage table input[type="checkbox"] {
+	cursor: pointer;
+}
+
+.products-manage table tr:hover {
+	background-color: #f5f5f5;
+}
+
+.products-manage table tr:nth-child(even):hover {
+	background-color: #ddd;
+}
+
+.products-manage table tr:last-child td {
+	border-bottom: none;
+}
+
+.products-manage table td:last-child a {
+	padding: 5px 10px;
+	border-radius: 5px;
+	background-color: #000000;
+	color: #fff;
+	text-decoration: none;
+}
+
+.products-manage table td:last-child a:hover {
+	background-color: rgb(105, 11, 255);
+}
+
+/* Admin-Bidderss styles */
+
+.bidders-manage main {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+  }
+  
+  .bidders-manage  .bidders {
+	flex-basis: 65%;
+	margin-right: 20px;
+  }
+  
+  .bidders-manage  .auctions {
+	flex-basis: 30%;
+  }
+  
+  .bidders-manage  table {
+	width: 100%;
+	border-collapse: collapse;
+  }
+  
+  .bidders-manage  th,
+  td {
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+  }
+  
+  .bidders-manage  th {
+	background-color: #f7f7f7;
+	color: #000000;
+	text-transform: uppercase;
+	font-size: 0.9rem;
+  }
+  
+  .bidders-manage  tbody tr:hover {
+	background-color: #f5f5f5;
+  }
+  
+  .bidders-manage  .actions {
+	display: flex;
+	justify-content: flex-end;
+  }
+  
+  .bidders-manage  .actions button {
+	margin-left: 10px;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 8px 15px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+  }
+  
+  .bidders-manage  .add-bidder,
+  .add-auction {
+	background-color:#f5b077;
+	color: #000000;
+	font-weight: 500;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 20px;
+	transition: all 0.2s ease-in-out;
+  }
+
+  .bidders-manage  .add-bidder:hover {
+	background-color:#fbdda9;
+}
+  
+  @media (max-width: 768px) {
+	.bidders-manage  main {
+	  flex-direction: column;
+	}
+  
+	.bidders,
+	.auctions {
+	  flex-basis: 100%;
+	  margin-bottom: 20px;
+	}
+  }
+
+.bidders-manage .action-btn{
+	background-color:#000 ;
+	color: #fff;
+	border: none;
+  }
+
+.bidders-manage .action-btn:hover{
+	background-color: blueviolet;
+	font-weight: 500;
+
+  }
+  
+/* Admin-Auctioners styles */
+
+   .Auctioners-manage main {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+  }
+  
+  .Auctioners-manage  .Auctioners {
+	flex-basis: 65%;
+	margin-right: 20px;
+  }
+  
+  .Auctioners-manage  .auctions {
+	flex-basis: 30%;
+  }
+  
+  .Auctioners-manage  table {
+	width: 100%;
+	border-collapse: collapse;
+  }
+  
+  .Auctioners-manage  th,
+  td {
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+  }
+  
+  .Auctioners-manage  th {
+	background-color: #f7f7f7;
+	color: #000000;
+	text-transform: uppercase;
+	font-size: 0.9rem;
+  }
+  
+  .Auctioners-manage  tbody tr:hover {
+	background-color: #f5f5f5;
+  }
+  
+  .Auctioners-manage  .actions {
+	display: flex;
+	justify-content: flex-end;
+  }
+  
+  .Auctioners-manage  .actions button {
+	margin-left: 10px;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 8px 15px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+  }
+  
+  .Auctioners-manage  .add-Auctioners,
+  .add-auction {
+	background-color:#f5b077;
+	color: #000000;
+	font-weight: 500;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 20px;
+	transition: all 0.2s ease-in-out;
+  }
+
+  .Auctioners-manage  .add-Auctioners:hover {
+	background-color:#fbdda9;
+}
+  
+  @media (max-width: 768px) {
+	.Auctioners-manage  main {
+	  flex-direction: column;
+	}
+  
+	.Auctioners,
+	.auctions {
+	  flex-basis: 100%;
+	  margin-bottom: 20px;
+	}
+  }
+
+.Auctioners-manage .action-btn{
+	background-color:#000 ;
+	color: #fff;
+	border: none;
+  }
+
+.Auctioners-manage .action-btn:hover{
+	background-color: blueviolet;
+	font-weight: 500;
+
+  }
+
+
+  /* Auctioners-catg styles */
+
+  .Auctioners-manage main {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+  }
+  
+  .Auctioners-manage  .Auctioners {
+	flex-basis: 65%;
+	margin-right: 20px;
+  }
+  
+  .Auctioners-manage  .auctions {
+	flex-basis: 30%;
+  }
+  
+  .Auctioners-manage  table {
+	width: 100%;
+	border-collapse: collapse;
+  }
+  
+  .Auctioners-manage  th,
+  td {
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+  }
+  
+  .Auctioners-manage  th {
+	background-color: #f7f7f7;
+	color: #000000;
+	text-transform: uppercase;
+	font-size: 0.9rem;
+  }
+  
+  .Auctioners-manage  tbody tr:hover {
+	background-color: #f5f5f5;
+  }
+  
+  .Auctioners-manage  .actions {
+	display: flex;
+	justify-content: flex-end;
+  }
+  
+  .Auctioners-manage  .actions button {
+	margin-left: 10px;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 8px 15px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+  }
+  
+  .Auctioners-manage  .add-Auctioners,
+  .add-auction {
+	background-color:#f5b077;
+	color: #000000;
+	font-weight: 500;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 20px;
+	transition: all 0.2s ease-in-out;
+  }
+
+  .Auctioners-manage  .add-Auctioners:hover {
+	background-color:#fbdda9;
+}
+  
+  @media (max-width: 768px) {
+	.Auctioners-manage  main {
+	  flex-direction: column;
+	}
+  
+	.Auctioners,
+	.auctions {
+	  flex-basis: 100%;
+	  margin-bottom: 20px;
+	}
+  }
+
+.Auctioners-manage .action-btn{
+	background-color:#000 ;
+	color: #fff;
+	border: none;
+  }
+
+.Auctioners-manage .action-btn:hover{
+	background-color: blueviolet;
+	font-weight: 500;
+
+  }
+
+
+
+/* profile-catg styles */
+
+.container-admin-profile {
+	background-color: white;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 40px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	margin-top: 50px;
+}
+
+.container-admin-profile h1 {
+	text-align: center;
+	margin-top: 0;
+}
+
+.admin-profile {
+	display: flex;
+	align-items: center;
+	margin-bottom: 40px;
+}
+
+.admin-profile img {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	margin-right: 30px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.admin-details {
+	flex: 1;
+}
+
+.admin-details .name {
+	font-size: 24px;
+	margin: 0 0 10px 0;
+}
+
+.admin-details .email,
+.address,
+.contact {
+	font-size: 16px;
+	margin: 0;
+}
+
+.profile-btn-actions {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 30px;
+}
+
+.change-password-btn,
+.edit-profile-btn {
+	background-color:#f5b077;
+	color:#000;
+	border: none;
+	padding: 10px 20px;
+	margin-left: 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: 16px;
+}
+
+.change-password-btn:hover,
+.edit-profile-btn:hover {
+	background-color:#fbdda9;
+	color: #000;
+}
+
+
+
+/* user-Controls */
+/* My Bag-catg styles */
+
+/* Won Bids-catg styles */
+.won-bids-manage {
+	padding: 0px;
+}
+
+.won-bids-manage .products {
+	margin-top: 10px;
+}
+
+.won-bids-manage .products h2 {
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.won-bids-manage .products table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 40px;
+}
+
+.won-bids-manage .products th,
+.products td {
+	padding: 10px;
+	text-align: left;
+}
+
+.won-bids-manage .products th {
+	background-color: #f5f5f5;
+	color: #000000;
+}
+
+.won-bids-manage .products td:first-child {
+	width: 20%;
+}
+
+.won-bids-manage .products td:nth-child(2) {
+	font-weight: bold;
+}
+
+.won-bids-manage .products td:nth-child(3),
+.products td:last-child {
+	width: 15%;
+	font-weight: bold;
+}
+
+.won-bids-manage .products td:last-child {
+	text-align: center;
+}
+
+.won-bids-manage .products td img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+.won-bids-manage .btn {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #f5b077;
+	color: #000000;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.won-bids-manage .btn:hover {
+	background-color: #fbdda9;
+}
+
+
+.auction-updates1{
+	padding: 25px;
+	background-color: #fff;
+	box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+}
+.auction-update{
+	padding: 25px;
+	background-color: #fff;
+	box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+	
+}
+
+/* User-Settings styles */
+
