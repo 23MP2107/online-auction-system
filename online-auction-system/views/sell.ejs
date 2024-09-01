@@ -20,6 +20,8 @@
 		<!-- Navbar links -->
 		<!-- Selling form -->
 		<form style="margin-top: 150px; margin-bottom: 120px;" class="selling-form" action="/sell" method="post">
+		<form action="/upload" method="POST" enctype="multipart/form-data">
+
 			<h1>List your Product </h1>
 			<div  class="form-row">
 			  <div class="form-group">
@@ -60,6 +62,10 @@
 				  <option value="used">Used</option>
 				</select>
 			  </div>
+			  <div class="form-group">
+				<label for="productImage">Upload Product Image</label>
+				<input type="file" class="form-control" id="productImage" name="productImage" accept="image/*" required>
+			</div>		
 			</div>
 	
 			<div class="form-row">
