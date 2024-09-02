@@ -1,16 +1,3 @@
-// const userCookie=async(user,res)=>{
-
-//     const token = await user.getJwtToken()
-//     const options = {
-//         expires: new Date(Date.now()+(55*60*1000)),
-//         httpOnly:true
-//     }
-    
-//     return res.cookie('user', token, options ).redirect('/')
-// }
-
-// module.exports = userCookie
-
 const userCookie = async (user, res) => {
     try {
         // Generate the token
@@ -18,12 +5,15 @@ const userCookie = async (user, res) => {
 
         // Define cookie options
         const options = {
-            expires: new Date(Date.now() + 55 * 60 * 1000), // Cookie expiration time
+            expires: new Date(Date.now() + 55 * 60 * 1000), // Cookie expiration time (55 minutes)
             httpOnly: true, // Prevents client-side access to the cookie
+            secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+            sameSite: 'strict' // Restrict cookie to same-site requests
         };
 
-        // Set cookie and redirect, using return to prevent further execution
-        return res.cookie('user', token, options).redirect('/');
+        // Set the cookie and redirect
+        res.cookie('user', token, options);
+        res.redirect('/'); // Redirect to home page or another appropriate route
     } catch (error) {
         // Handle potential errors
         console.error('Error setting cookie:', error);

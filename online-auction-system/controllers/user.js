@@ -3,6 +3,7 @@ let Sub = require('../models/Subscription')
 let Sell = require('../models/Sell')
 let Item = require('../models/Item')
 const userCookie = require('../utils/userCookie')
+const mongoose = require('mongoose'); // Import mongoose
 
 exports.getMain = async(req,res)=>{
     let items = await Item.find({active:true}).limit(4)
@@ -51,14 +52,17 @@ exports.login = async (req,res)=>{
     const isPasswordCorrect = await  user.isValidatedPassword(password)
     if(!isPasswordCorrect){
         return res.render('login',{msg:"Incorrect Email or Password",islogin:req.islogin})
-    }
-    if(user.isAdmin===true){
+     }
+     if(user.isAdmin===true){
         userCookie(user,res)
        return res.redirect('/admin')
+     }
+     userCookie(user,res)
+    
+        
     }
-    userCookie(user,res)
-}
-
+    
+    
 exports.logout = (req,res)=>{
     res.cookie('user',null,{
         expires: new Date(Date.now()),
@@ -74,13 +78,42 @@ exports.subscribe = async(req,res)=>{
     return res.render('main',{islogin:req.islogin,sub:"Subscribed Succesfullly"})
 }
 
-exports.sell = async(req,res)=>{
-    req.body.id=Date.now()
-    console.log(req.user)
-    req.body.email=req.user.email
-    await Sell.create(req.body)
-    return res.redirect('/')
+// exports.sell = async(req,res)=>{
+//     req.body.id=Date.now()
+//     console.log(req.user)
+//     req.body.email=req.user.email
+//     await Sell.create(req.body)
+//     return res.redirect('/')
+// }
+exports.sell = async (req, res) => {
+    // Validate form fields
+    if (!req.body.name || !req.file || !req.body.description || !req.body.price || !req.body.category || !req.body.condition) {
+        return res.status(400).send('All fields are required.');
+    }
+
+    try {
+        const userId = req.user ? mongoose.Types.ObjectId(req.user.id) : null;
+
+        // Save the data
+        await Sell.create({
+            name: req.body.name,
+            email: req.body.email, // Ensure the email is sent and handled correctly
+            description: req.body.description,
+            price: req.body.price,
+            category: req.body.category,
+            condition: req.body.condition,
+            imagePath: req.file.path, // Save file path
+            userId: userId// Use user ID if available
+        });
+        return res.redirect('/'); // Redirect after successful creation
+    } catch (err) {
+        console.error(err);
+        if (!res.headersSent) {
+            return res.status(500).send('Server error');
+    }
 }
+   
+};
 
 exports.getBidPage = (req,res)=>{
     let id = req.params.id

@@ -1,7 +1,8 @@
 const express = require('express')
 const { getMain, getAuctions, getSell, getLogin, getContact, getSignup, signup, login, logout, subscribe, sell, getBidPage, bid } = require('../controllers/user')
-const { isLoggedin, loginTest } = require('../middlewares/user')
+const { isLoggedin, loginTest } = require('../middleware/user')
 const router = express.Router()
+const upload = require('../middleware/upload'); // Import the Multer middleware
 
 
 router
@@ -16,7 +17,7 @@ router
 router
     .route('/sell')
     .get(isLoggedin,loginTest,getSell)
-    .post(isLoggedin,sell)
+    .post(isLoggedin,upload.single('image'),sell)
 
 router
     .route('/login')

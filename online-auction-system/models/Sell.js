@@ -8,7 +8,11 @@ const sellSchema = new mongoose.Schema({
     // category:String,
     // condition:String,
     // email:String
-
+    // userId: { 
+    //     type: mongoose.Schema.Types.ObjectId, 
+    //     ref: 'User', 
+    //     required: true 
+    // }, // Reference to the user who created the sell request
     name: {
         type: String,
         required: true
@@ -33,9 +37,9 @@ const sellSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    imagePath: {
+    image: {
         type: String, // Field to store the path to the uploaded image
-        required: false // You can make this required if necessary
+        required: true // You can make this required if necessary
     }
 })
   

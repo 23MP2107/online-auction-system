@@ -34,8 +34,8 @@ exports.isLoggedin = async (req,res,next)=>{
 }
 
 exports.isAdmin = (req,res,next)=>{
-    if(req.user.isAdmin==true){
-        return next()
+    if(req.user && req.user.isAdmin===true){
+        return next();
     }
-    return res.redirect('/admin/login')
-}
+    return res.redirect('/admin/login');
+};

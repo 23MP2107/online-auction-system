@@ -1,4 +1,4 @@
-// routes/sell.js
+
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
@@ -33,16 +33,22 @@ const upload = multer({
 });
 
 // Route to handle product listing with image upload
-router.post('/upload', upload.single('productImage'), async (req, res) => {
+router.post('/uploads', upload.single('image'), async (req, res) => {
     try {
+        console.log('Request body:', req.body);
+        console.log('Uploaded file:', req.file);
+        // const imageUrl = req.file ? `/uploads/${req.file.filename}` : null;
+
+        
         // Create a new Sell document with form data and image path
         const newSell = new Sell({
             name: req.body.name,
+            email: req.body.email,
             description: req.body.description,
             price: req.body.price,
             category: req.body.category,
             condition: req.body.condition,
-            imagePath: req.file.path // Save the path of the uploaded image
+            image: req.file.path // Save the path of the uploaded image
         });
 
         // Save the product to the database

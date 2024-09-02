@@ -1,10 +1,10 @@
-let User = require('../models/User')
 let Sub = require('../models/Subscription')
 let Sell = require('../models/Sell')
 let Item = require('../models/Item')
 
 exports.getSells = async(req,res)=>{
     let sells = await Sell.find().sort({id:-1})
+    console.log(sells);
     return res.render('admin/sell',{sells})
 }
 

@@ -1,8 +1,7 @@
 const express = require('express')
-const { isLoggedin, loginTest } = require('../middlewares/user')
+const { isLoggedin, loginTest } = require('../middleware/user')
 const { getSells, getSubscriptions, getAdd, addItem, getOngoings, getPrevious, viewItem, changeActive } = require('../controllers/admin')
-const router = express.Router()
-const userCookie = require('./utils/userCookie');
+const router = express.Router();
 
 router
     .route('/login')
