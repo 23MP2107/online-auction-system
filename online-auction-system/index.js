@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 
 const express = require('express')
 const app =express()
@@ -12,7 +12,7 @@ app.use(express.static('public'))
 // app.use('/uploads', express.static('uploads'));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 const connectWithDb = require('./config/database')
 connectWithDb()
@@ -25,6 +25,18 @@ let userRoute = require('./routes/user')
 let adminRoute = require('./routes/admin')
 app.use('/',userRoute)
 app.use('/admin',adminRoute)
+
+// Test route to set cookie
+app.get('/test-set-cookie', (req, res) => {
+    res.cookie('user', 'testtoken', { httpOnly: true });
+    res.send('Cookie has been set');
+});
+
+// Test route to check cookie
+app.get('/test-check-cookie', (req, res) => {
+    console.log('Cookie:', req.cookies.user);
+    res.send('Check console for cookie');
+});
 
 
 let port = process.env.PORT || 3000

@@ -13,7 +13,7 @@ const userCookie = async (user, res) => {
 
         // Set the cookie and redirect
         res.cookie('user', token, options);
-        res.redirect('/'); // Redirect to home page or another appropriate route
+        // res.redirect('/'); // Redirect to home page or another appropriate route
     } catch (error) {
         // Handle potential errors
         console.error('Error setting cookie:', error);

@@ -17,15 +17,17 @@ exports.loginTest = async(req,res,next)=>{
 exports.isLoggedin = async (req,res,next)=>{
     const token = req.cookies.user
     if(!token){
+        console.log('No token found');
         return res.redirect('/login')
     }
 
     try{
         const decoded =await jwt.verify(token,process.env.JWT_SECRET)
         req.user=decoded
-        console.log(req.user)
+        console.log('User authenticated:',req.user)
         return next()
     }catch(err){
+        console.log('Token verification failed:', err);
         return res.cookie('user',null,{
             expires: new Date(Date.now()),
             httpOnly:true

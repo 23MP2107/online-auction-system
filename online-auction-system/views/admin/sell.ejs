@@ -42,8 +42,9 @@
 							<td><%= s.category %></td>
 							<td><%= s.condition %></td>
 							<td>
-								<% if (s.imageUrl) { %>
-									<img src="<%= s.imageUrl %>" alt="Sell Request Image" style="width: 100px; height: auto;">
+								<% if (s.image) { %>
+									<!-- <p>Image Path: <%= s.image %></p> -->
+									<img src="/uploads/<%= s.image.split('/').pop() %>" alt="Sell Request Image" style="width: 100px; height: auto;">
 								<% } else { %>
 									No image available
 								<% } %>
