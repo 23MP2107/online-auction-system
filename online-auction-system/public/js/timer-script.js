@@ -1,48 +1,4 @@
-// // Set the end time for the auction (replace with your own end time)
-// var endTime = new Date('2023-04-30T08:15:00Z');
-
-// // Select all the timer and bid now button elements
-// var timers = document.querySelectorAll('.timer');
-// var bidNowBtns = document.querySelectorAll('.bid-now-btn');
-
-// // Update the timer element with the remaining time
-// function updateTimer(timer) {
-//   var now = new Date();
-//   var remainingTime = endTime - now;
-
-//   if (remainingTime <= 0) {
-//     // If the timer has ended, disable the bid now button
-//     timer.closest('.auction-container').querySelector('.bid-now-btn').disabled = true;
-//     timer.innerHTML = 'Auction ended';
-//   } else {
-//     var hours = Math.floor((remainingTime / (1000 * 60 * 60)) % 24);
-//     var minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
-//     var seconds = Math.floor((remainingTime / 1000) % 60);
-//     timer.innerHTML = hours.toString().padStart(2, '0') + ':' +
-//                       minutes.toString().padStart(2, '0') + ':' +
-//                       seconds.toString().padStart(2, '0');
-//   }
-// }
-
-// // Update the timer for each container every second
-// setInterval(function() {
-//   for (var i = 0; i < timers.length; i++) {
-//     updateTimer(timers[i]);
-//   }
-// }, 1000);
-
-// // Add click event listener to each bid now button
-// for (var i = 0; i < bidNowBtns.length; i++) {
-//   bidNowBtns[i].addEventListener('click', function() {
-//     // Redirect to bid page (replace with your own bid page URL)
-//     window.location.href = 'index.html';
-//   });
-// }
-// public/js/timer-script.js
-
-// Add event listener to the upload form
-// public/js/timer-script.js
-
+// /public/js/timer-script.js
 // Add event listener to the upload form
 document.getElementById('uploadForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
@@ -71,6 +27,37 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
         alert('Failed to list product.');
     });
 });
+
+// // Function to start the countdown timer
+// function startTimer(endTime, timerElementId) {
+//     const endTimeMs = new Date(endTime).getTime();
+//     const timerElement = document.getElementById(timerElementId);
+
+//     function updateTimer() {
+//         const now = new Date().getTime();
+//         const distance = endTimeMs - now;
+
+//         if (distance < 0) {
+//             timerElement.innerHTML = "Auction Ended";
+//             clearInterval(timerInterval);
+//             return;
+//         }
+
+//         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+//         timerElement.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+//     }
+
+//     // Update the timer every second
+//     const timerInterval = setInterval(updateTimer, 1000);
+// }
+
+// // Export the function if you need it elsewhere (not necessary if used only here)
+// if (typeof module !== 'undefined') {
+//     module.exports = { startTimer };
+// }
 
 
 
