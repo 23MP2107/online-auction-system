@@ -50,14 +50,15 @@
 					<option value="sports">Sports & Outdoors</option>
 				</select>
 			</div>
+			<!-- Auction Start Time -->
 			<div class="form-group">
-				<label for="condition">Condition</label>
-				<select id="condition" name="condition" required>
-					<option value="">Select a condition</option>
-					<option value="new">New</option>
-					<option value="like-new">Like New</option>
-					<option value="used">Used</option>
-				</select>
+				<label for="start-time">Auction Starting Date and Time</label>
+				<input type="datetime-local" id="start-time" name="startTime" required>
+			</div>
+			<!-- Auction End Time -->
+			<div class="form-group">
+				<label for="end-time">Auction Ending Date and Time</label>
+				<input type="datetime-local" id="end-time" name="endTime" required>
 			</div>
 			<div class="form-group">
 				<label for="productImage">Upload Product Image</label>
@@ -75,7 +76,7 @@
 	</footer>
 	<!-- Footer -->
 	
-	<script src="timer-script.js"></script>
+	<script src="/js/timer-script.js"></script>
 
 </body>
 </html>

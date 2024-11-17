@@ -23,12 +23,12 @@
 				</div>
 			</div>
 			<div class="row mt-4">
-				<% items.forEach((i)=>{ %>
+				<% auctions.forEach((i)=>{ %>
 					
 						<div class="col-3 mb-4"> 
 							<a href="/admin/view/<%=i.id%>">
 								<div class="card h-100 shadow-sm"> 
-									<img src="<%=i.photo%>" class="card-img-top" alt="">
+									<img src="/uploads/<%=i.photo%>" class="card-img-top" alt="">
 									<div class="card-body"> 
 										<div class="label-top-1 shadow-sm" style="color: #000;"><%=i.bids.length%> Bids</div> 
 										<div class="clearfix mb-3" style="color: #000;"> 

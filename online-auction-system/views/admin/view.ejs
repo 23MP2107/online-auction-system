@@ -20,17 +20,19 @@
 			
 			<div class="row mt-4">
 				<div class="col-5">
-					<h3>Item Details</h3>
-					<img src="<%=item.photo%>" style="width: 50%;margin-top: 20px;">
+					<h3><u>Item Details</u></h3>
+					<img src="/uploads/<%=item.photo%>" style="width: 50%;margin-top: 20px;">
 					<h4 class="mt-3"><%=item.name%></h4>
 					<h6 class="mt-3"><%=item.text%></h6>
 
 					<br>
 					<h3 class="mt-5">Item Details</h3>
-					<p>Highestt Bid : <%=item.highest.amount%></p>
+					<p>Highest Bid : <%=item.highest.amount%></p>
 
 					<%if(item.active){%>
-						<a href="/admin/delete/<%=item.id%>"><button class="btn btn-lg btn-danger mt-4">Stop Bidding</button></a>
+						<form action="/admin/delete/<%=item.id%>" method="POST" onsubmit="return confirm('Are you sure you want to stop this auction?');">
+							<button type="submit" class="btn btn-lg btn-danger mt-4">Stop Bidding</button>
+						</form>
 					<%}%>
 				</div>
 				<div class="col-7">

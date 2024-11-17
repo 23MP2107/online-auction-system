@@ -37,7 +37,6 @@
 				<div class="main-img">
 				<img src="/images/Illustration-M1.svg" style="width: 100%;margin-top: 20px;">
 			</div>
-			</div>
 		</div>
 	</div>
 </div>
@@ -60,47 +59,111 @@
 
 
 <div class="slider">
-	<section  class="feature-item-carousal">
+	<section class="feature-item-carousal">
 		<main> 
 			<div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;"> 
 				<div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
 					<% items.forEach((i)=>{ %>
 						<div class="col"> 
 							<div class="card h-100 shadow-sm"> 
-								<img src="<%=i.photo%>" class="card-img-top" alt="">
+								<img src="/uploads/<%=i.photo%>" class="card-img-top" alt="">
 								<div class="card-body"> 
 									<div class="label-top-1 shadow-sm"><%=i.bids.length%> Bids</div> 
 									<div class="clearfix mb-3"> 
-										
-										<a href="#">
-											<%=i.name%>
-										</a>
-										</span>
+										<a href="#"><%=i.name%></a>
 									</div> 
+									<h5 class="card-title"><%=i.text%></h5>
 									<h5 class="card-title">
-										<%=i.text%>
+										<% if (i.status === 'completed' && i.highest && i.highest.username) { %>
+											Winner: <%= i.highest.username %> - Amount: <%= i.highest.amount %>
+										<% } else if (i.status === 'completed') { %>
+											Auction ended without bids
+										<% } else { %>
+											Current Highest Bid: <%= i.highest ? i.highest.amount : 'No bids yet' %>
+										<% } %>
 									</h5>
+									<p class="auction-datetime"><strong>Auction Starts:</strong> <%= new Date(i.startTime).toLocaleString() %></p>
+									<p class="auction-datetime"><strong>Auction Ends:</strong> <%= new Date(i.endTime).toLocaleString() %></p>
+ 
 									<div class="text-center my-4"> 
 										<div class="auction-container">
-											<p style="font-size: 15px; font-weight: 700;">Time Left <span class="timer badge rounded-pill bg-white">00:00:00</span></p>
-											<a href="/bid/<%=i.id%>"><button class="bid-now-btn">Bid Now</button></a>
+											<p style="font-size: 15px; font-weight: 700;">
+												<% if (i.status === 'completed') { %>
+													Auction Ended
+												<% } else { %>
+													Time Left: <span class="timer badge rounded-pill bg-white" id="timer-<%= i._id %>">Loading...</span>
+												<% } %>
+											</p>
+											<% if (i.status !== 'completed') { %>
+												<a href="/bid/<%=i.id%>"><button class="bid-now-btn">Bid Now</button></a>
+											<% } %>
 										</div>
 									</div> 
 								</div> 
 							</div> 
 						</div>
+						<!-- Timer logic for each item -->
+						<script>
+							(function() {
+								// Auction start and end times
+								let startTime = new Date("<%= i.startTime %>").getTime();
+								let endTime = new Date("<%= i.endTime %>").getTime();
+								let currentTime = Date.now();
+					
+								// Timer element for this auction
+								let timerElement = document.getElementById("timer-<%= i._id %>");
+					
+								// Function to update the timer
+								function updateTimer() {
+									let now = Date.now(); // Current time
+					
+									if (now < startTime) {
+										// Auction has not started yet
+										timerElement.innerHTML = "Auction not started";
+									} else if (now >= startTime && now < endTime) {
+										// Auction is live, calculate remaining time
+										let timeLeft = endTime - now;
+					
+										let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+										let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+										let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+					
+										// Display the countdown
+										timerElement.innerHTML = hours + "h " + minutes + "m " + seconds + "s";
+					
+										// Stop the timer when time is up
+										if (timeLeft <= 0) {
+											clearInterval(timerInterval);
+											timerElement.innerHTML = "Bid over";
+										}
+									} else {
+										// Auction has ended
+										timerElement.innerHTML = "Bid over";
+									}
+								}
+					
+								// Initial call to display the correct status immediately
+								updateTimer();
+					
+								// Only start the countdown interval if the auction is live
+								if (currentTime >= startTime && currentTime < endTime) {
+									var timerInterval = setInterval(updateTimer, 1000);
+								} else if (currentTime >= endTime) {
+									// If the auction has already ended, immediately show "Bid over"
+									timerElement.innerHTML = "Bid over";
+								} else if (currentTime < startTime) {
+									// If the auction has not started, immediately show "Auction not started"
+									timerElement.innerHTML = "Auction not started";
+								}
+							})();
+						</script>
 					<%})%>
 					
 				</div>
 			</div>
-</div> 
-	</div> 
-</div> 
-	</div> 
-		</div> 
 		</main>
-		</section>
-		</div>
+	</section>
+</div>
 
 
 		
@@ -148,6 +211,7 @@
 		<!-- Footer -->
 			
 		
-		<script src="/js/timer-script.js"></script>	
+		<script src="/js/timer-script.js"></script>
+		
 		</body>
 		</html>
