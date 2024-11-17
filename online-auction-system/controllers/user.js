@@ -1,25 +1,29 @@
+///controllers/user.js
 let User = require('../models/User');
 let Sub = require('../models/Subscription');
 let Sell = require('../models/Sell');
-let Item = require('../models/Item');
+const Auction = require('../models/Auction');
 const userCookie = require('../utils/userCookie');
 const mongoose = require('mongoose'); // Import mongoose
 const jwt = require('jsonwebtoken'); // JWT package for authentication
 
-// Helper function to get JWT from request headers
+// Function to get JWT from cookies
 const getTokenFromHeader = (req) => {
-    const authHeader = req.headers['authorization'];
-    return authHeader && authHeader.split(' ')[1]; // Return token or undefined
+    return req.cookies.user; // Get token from cookies instead of headers
 };
 
 exports.getMain = async(req, res) => {
-    let items = await Item.find({ active: true }).limit(4);
+    let items = await Auction.find({ active: true }).limit(4);
     res.render('main', { islogin: req.islogin, sub: '', items });
 };
 
-exports.getAuctions = async(req, res) => {
-    let items = await Item.find({ active: true });
-    res.render('auctions', { islogin: req.islogin, items });
+exports.getAuctions = async (req, res) => {
+    const items = await Auction.find({ active: true }).sort({ _id: -1 });
+    return res.render('auctions', {
+        items,
+        islogin: req.islogin, // Pass islogin to the view
+        isAdmin: req.user ? req.user.isAdmin : false // Pass isAdmin to the view
+    });
 };
 
 exports.getSell = (req, res) => {
@@ -102,6 +106,10 @@ exports.sell = async (req, res) => {
         
         const userId = Number(req.user.id); // Ensure userId is treated as a Number
 
+        // Convert startTime and endTime from the request to Date objects
+        const startTime = new Date(req.body.startTime);
+        const endTime = new Date(req.body.endTime);
+
         // Save the data
         await Sell.create({
             userId: userId, // Store as a Number
@@ -111,8 +119,10 @@ exports.sell = async (req, res) => {
             price: req.body.price,
             category: req.body.category,
             condition: req.body.condition,
-            imagePath: req.file.path, // Save file path
-            // userId: mongoose.Types.ObjectId(req.user.id) // Use user ID from JWT
+            imagePath: req.file.path,
+            startTime: startTime,     // Save auction start time
+            endTime: endTime, 
+            startingPrice: req.body.price
         });
 
         return res.redirect('/'); // Redirect after successful creation
@@ -122,12 +132,32 @@ exports.sell = async (req, res) => {
     }
 };
 
-exports.getBidPage = (req, res) => {
-    let id = req.params.id;
-    return res.render('bid', { id, islogin: req.islogin });
+exports.getBidPage = async (req, res) => {
+    console.log('getBidPage called with ID:', req.params.id);
+    
+    try {
+        const auctionId = req.params.id;
+
+        // Check if the auctionId is a valid ObjectId
+        if (!mongoose.Types.ObjectId.isValid(auctionId)) {
+            return res.status(400).send('Invalid Auction ID');
+        }
+
+        // Find the auction by ID
+        const auction = await Auction.findById(auctionId);
+        if (!auction) {
+            return res.status(404).send('Auction not found');
+        }
+
+        // Render the bid page with auction details for user
+        res.render('bid', { auction });
+    } catch (error) {
+        console.error('Error fetching the bid page:', error);
+        res.status(500).send('Server Error');
+    }
 };
 
-// Updated bid function with JWT validation
+//for placing bid
 exports.bid = async (req, res) => {
     const token = getTokenFromHeader(req);
     if (!token) {
@@ -137,30 +167,54 @@ exports.bid = async (req, res) => {
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         req.user = decoded; // Attach decoded JWT payload to req.user
+        console.log('placeBid function called'); // This should print to the console
 
-        let item = await Item.findOne({ id: req.body.id });
+        // Find the auction by ID
+        let auction = await Auction.findById(req.body.id); // Use findById to get auction
 
-        let prevHighest = item.highest.amount;
-        let amount = req.body.amount;
-        item.bids.push({
+        if (!auction) {
+            return res.status(404).send('Auction not found');
+        }
+
+        const currentTime = new Date();
+        const startTime = new Date(auction.startTime);
+        const endTime = new Date(auction.endTime);
+
+        // Check if the current time is within the auction period
+        if (currentTime < startTime) {
+            return res.status(400).send('Bidding has not started yet.');
+        }
+        if (currentTime > endTime) {
+            return res.status(400).send('The auction has already ended.');
+        }
+
+        let prevHighest = auction.highest ? auction.highest.amount : 0; // Get previous highest bid
+        let amount = Number(req.body.amount); // Ensure the bid amount is a Number
+
+        // Validate the bid amount
+        if (amount <= prevHighest) {
+            return res.status(400).send('Bid must be higher than the current highest bid.');
+        }
+
+        // Push the new bid to the auction's bids array
+        auction.bids.push({
             amount: amount,
-            userid: Number(req.user.id),
+            userid: Number(req.user.id), // Store user ID as a Number
             username: req.user.name
         });
 
-        if (amount > prevHighest) {
-            item.highest = {
-                amount: amount,
-                userid: Number(req.user.id),
-                username: req.user.name
-            };
-        }
+        // Update the highest bid if the new amount is greater
+        auction.highest = {
+            amount: amount,
+            userid: Number(req.user.id), // Store user ID as a Number
+            username: req.user.name
+        };
 
-        await item.save();
-        return res.redirect('/');
+        await auction.save(); // Save the auction with updated bids
+        req.flash('success_msg', 'Bidding done! Your bid has been placed successfully.');
+        return res.redirect(`/bid/${auction._id}`); // Redirect to the auction page after bidding
     } catch (err) {
         console.error(err);
         return res.status(500).send('Server error or unauthorized.');
     }
 };
-
